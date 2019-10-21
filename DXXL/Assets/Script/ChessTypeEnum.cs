@@ -2,9 +2,10 @@
 {
     public enum ChessTypeEnum
     {
-        Red = 0,
-        Yellow,
-        Green,
-        Blue
+        Line = 0, //行
+        Column, //列
+        Color, //同色
+        Nine, //九宫格
+        None
     }
 }

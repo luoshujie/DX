@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3121322233175153286}
   - component: {fileID: 1903474721518704973}
   - component: {fileID: 3831895666011383751}
+  - component: {fileID: 3915333770883676516}
   m_Layer: 0
   m_Name: Chess
   m_TagString: Untagged
@@ -93,3 +94,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6743d8e64e4a9bd478b89eb50a89bae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data:
+    ChessTypeEnum: 0
+    XPos: 0
+    YPos: 0
+--- !u!61 &3915333770883676516
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6195492491420064527}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.88, y: 0.88}
+    newSize: {x: 0.88, y: 0.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.88, y: 0.88}
+  m_EdgeRadius: 0
