@@ -52,10 +52,11 @@ public class GameMgr : MonoBehaviour
     private void SpawnSkill(int count,int x,int y)
     {
         ChessTypeEnum chessTypeEnum = ChessTypeEnum.None;
-        if (count >= 3)
+        if (count >= 7)
         {
-            chessTypeEnum = ChessTypeEnum.Nine;
-            //三宫格消除
+            //同色消除
+            chessTypeEnum = ChessTypeEnum.Color;
+           
         }
         else if (count>=5)
         {
@@ -69,10 +70,11 @@ public class GameMgr : MonoBehaviour
                 chessTypeEnum = ChessTypeEnum.Line;
             }
         }
-        else if (count>=7)
+        else if (count>=3)
         {
-            //同色消除
-            chessTypeEnum = ChessTypeEnum.Color;
+            
+            chessTypeEnum = ChessTypeEnum.Nine;
+            //三宫格消除
         }
 
         Chess chess = SpawnSkillChess(x, y, chessTypeEnum);
