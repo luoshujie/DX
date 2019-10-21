@@ -5,6 +5,7 @@
         Red = 0,
         Yellow,
         Green,
-        Blue
+        Blue,
+        None
     }
 }
