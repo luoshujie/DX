@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BgUi
+    uniqueID: 3149712999
+    locked: 0
+  - name: Chess
+    uniqueID: 2601815755
+    locked: 0
