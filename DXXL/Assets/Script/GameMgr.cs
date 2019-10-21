@@ -66,26 +66,52 @@ public class GameMgr : MonoBehaviour
         }
         else
         {
-            List<Chess> seekList = new List<Chess>();
-            switch (chess.data.ChessTypeEnum)
-            {
-                case ChessTypeEnum.Color:
-                    seekList = SeekColor(chess.data.ChessColorTypeEnum);
-                    break;
-                case ChessTypeEnum.Column:
-                    seekList = SeekColumn(chess.data.XPos);
-                    break;
-                case ChessTypeEnum.Line:
-                    seekList = SeekLine(chess.data.YPos);
-                    break;
-                case ChessTypeEnum.Nine:
-                    seekList = SeekNine(chess);
-                    break;
-            }
+            List<Chess> seekList = GetSkillChess(chess);
 
             for (int i = 0; i < seekList.Count; i++)
             {
                 seekChessList.Add(seekList[i]);
+            }
+
+            List<Chess> skillChessList = GetSkillChessList(seekChessList, chess);
+            skillChessList.Insert(0,chess);
+            for (int i = 1; i < skillChessList.Count; i++)
+            {
+                seekList = GetSkillChess(skillChessList[i]);
+                for (int j = 0; j < seekList.Count; j++)
+                {
+                    if (seekList[j].data.ChessTypeEnum == ChessTypeEnum.None)
+                    {
+                        
+                        for (int k = 0; k < seekChessList.Count; k++)
+                        {
+                            if (seekChessList[k].data.id == seekList[j].data.id)
+                            {
+                                break;
+                            }
+
+                            if (k == seekChessList.Count - 1)
+                            {
+                                seekChessList.Add(seekList[j]);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int k = 0; k < skillChessList.Count; k++)
+                        {
+                            if (skillChessList[k].data.id == seekList[j].data.id)
+                            {
+                                break;
+                            }
+
+                            if (k == skillChessList.Count - 1)
+                            {
+                                skillChessList.Add(seekList[j]);
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -93,6 +119,33 @@ public class GameMgr : MonoBehaviour
         Debug.Log(seekChessList.Count);
 
         StartCoroutine(DeleteChess(seekChessList, chess));
+    }
+
+    /// <summary>
+    /// 获取技能棋子影响到的所有棋子
+    /// </summary>
+    /// <param name="chess"></param>
+    /// <returns></returns>
+    private List<Chess> GetSkillChess(Chess chess)
+    {
+        List<Chess> seekList = new List<Chess>();
+        switch (chess.data.ChessTypeEnum)
+        {
+            case ChessTypeEnum.Color:
+                seekList = SeekColor(chess.data.ChessColorTypeEnum);
+                break;
+            case ChessTypeEnum.Column:
+                seekList = SeekColumn(chess.data.XPos);
+                break;
+            case ChessTypeEnum.Line:
+                seekList = SeekLine(chess.data.YPos);
+                break;
+            case ChessTypeEnum.Nine:
+                seekList = SeekNine(chess);
+                break;
+        }
+
+        return seekList;
     }
 
     private IEnumerator DeleteChess(List<Chess> seekChessList, Chess touchChess)
@@ -167,6 +220,30 @@ public class GameMgr : MonoBehaviour
     #endregion
 
     #region 遍历
+
+    /// <summary>
+    /// 获取列表里的其他技能棋子
+    /// </summary>
+    /// <param name="seekAllList"></param>
+    /// <param name="chess"></param>
+    /// <returns></returns>
+    private List<Chess> GetSkillChessList(List<Chess> seekAllList, Chess chess)
+    {
+        List<Chess> seekList = new List<Chess>();
+
+        for (int i = 0; i < seekAllList.Count; i++)
+        {
+            if (seekAllList[i].data.ChessTypeEnum != ChessTypeEnum.None)
+            {
+                if (seekAllList[i].data.id != chess.data.id)
+                {
+                    seekList.Add(seekAllList[i]);
+                }
+            }
+        }
+
+        return seekList;
+    }
 
     /// <summary>
     /// 查找四周
@@ -279,7 +356,7 @@ public class GameMgr : MonoBehaviour
             int newX = chess.data.XPos + i;
             for (int j = -1; j < 2; j++)
             {
-                int newY = chess.data.YPos+j;
+                int newY = chess.data.YPos + j;
                 if (newX >= 0 && newX < Xcount && newY >= 0 && newY < Ycount)
                 {
                     seekList.Add(chessList[newX, newY]);
