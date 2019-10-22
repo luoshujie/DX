@@ -10,6 +10,7 @@ public class SpriteMgr : MonoBehaviour
     public static SpriteMgr instance;
     public List<Sprite> chessColorSpriteList;
     public List<Sprite> chessTypeSpriteList;
+    public List<Sprite> chessSkillColorSpriteList;
     private void Awake()
     {
         instance = this;
@@ -22,5 +23,9 @@ public class SpriteMgr : MonoBehaviour
     public Sprite GetChessSpriteAtChessType(ChessTypeEnum chessTypeEnum)
     {
         return chessTypeSpriteList[(int)chessTypeEnum];
+    }
+    public Sprite GetChessSpriteAtChessColorSkillType(ChessColorTypeEnum chessTypeEnum)
+    {
+        return chessSkillColorSpriteList[(int)chessTypeEnum];
     }
 }

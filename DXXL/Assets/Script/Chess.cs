@@ -31,7 +31,15 @@ namespace Script
                 data = chessData;
             }
 
-            render.sprite = SpriteMgr.instance.GetChessSpriteAtChessType(data.ChessTypeEnum);
+            if (data.ChessTypeEnum==ChessTypeEnum.Color)
+            {
+                render.sprite = SpriteMgr.instance.GetChessSpriteAtChessColorSkillType(data.ChessColorTypeEnum);
+            }
+            else
+            {
+                render.sprite = SpriteMgr.instance.GetChessSpriteAtChessType(data.ChessTypeEnum);
+            }
+            
         }
 
         public void UpdatePos()

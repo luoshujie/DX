@@ -47,3 +47,6 @@ TagManager:
   - name: Chess
     uniqueID: 2601815755
     locked: 0
+  - name: UI
+    uniqueID: 3441933565
+    locked: 0

@@ -11,12 +11,21 @@ public class GameMgr : MonoBehaviour
     private Chess[,] chessList;
     private GameObject chessObj;
 
+    private int score;
+    private bool gameState;
+    private bool fillIng;
+
     public int Xcount;
     public int Ycount;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    public void SetGameState(bool state)
+    {
+        gameState = state;
     }
 
     void Start()
@@ -38,6 +47,7 @@ public class GameMgr : MonoBehaviour
     /// <param name="chess"></param>
     public void SeekChess(Chess chess)
     {
+        if (!gameState||fillIng) return;
         List<Chess> seekChessList = new List<Chess>();
 
         if (chess.data.ChessTypeEnum == ChessTypeEnum.None)
@@ -74,7 +84,7 @@ public class GameMgr : MonoBehaviour
             }
 
             List<Chess> skillChessList = GetSkillChessList(seekChessList, chess);
-            skillChessList.Insert(0,chess);
+            skillChessList.Insert(0, chess);
             for (int i = 1; i < skillChessList.Count; i++)
             {
                 seekList = GetSkillChess(skillChessList[i]);
@@ -82,7 +92,6 @@ public class GameMgr : MonoBehaviour
                 {
                     if (seekList[j].data.ChessTypeEnum == ChessTypeEnum.None)
                     {
-                        
                         for (int k = 0; k < seekChessList.Count; k++)
                         {
                             if (seekChessList[k].data.id == seekList[j].data.id)
@@ -169,8 +178,13 @@ public class GameMgr : MonoBehaviour
             SpawnSkill(chessData, count);
         }
 
+        score += count;
+        UIMgr.instance.UpdateScore(score);
+        fillIng = true;
         yield return new WaitForSeconds(0.2f);
         CheckoutBoard();
+        yield return new WaitForSeconds(0.5f);
+        fillIng = false;
     }
 
     #region 生成技能棋子

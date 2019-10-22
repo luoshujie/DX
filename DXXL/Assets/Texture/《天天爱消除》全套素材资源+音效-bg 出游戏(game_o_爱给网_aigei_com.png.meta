@@ -6,6 +6,18 @@ TextureImporter:
       213: 8981215425757493056
     second: "\u300A\u5929\u5929\u7231\u6D88\u9664\u300B\u5168\u5957\u7D20\u6750\u8D44\u6E90+\u97F3\u6548-bg
       \u51FA\u6E38\u620F(game_o_\u7231\u7ED9\u7F51_aigei_com_0"
+  - first:
+      213: 4553651871111023102
+    second: "\u300A\u5929\u5929\u7231\u6D88\u9664\u300B\u5168\u5957\u7D20\u6750\u8D44\u6E90+\u97F3\u6548-bg
+      \u51FA\u6E38\u620F(game_o_\u7231\u7ED9\u7F51_aigei_com_1"
+  - first:
+      213: -7826175224174307708
+    second: "\u300A\u5929\u5929\u7231\u6D88\u9664\u300B\u5168\u5957\u7D20\u6750\u8D44\u6E90+\u97F3\u6548-bg
+      \u51FA\u6E38\u620F(game_o_\u7231\u7ED9\u7F51_aigei_com_2"
+  - first:
+      213: -7867363482143464911
+    second: "\u300A\u5929\u5929\u7231\u6D88\u9664\u300B\u5168\u5957\u7D20\u6750\u8D44\u6E90+\u97F3\u6548-bg
+      \u51FA\u6E38\u620F(game_o_\u7231\u7ED9\u7F51_aigei_com_3"
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -97,7 +109,7 @@ TextureImporter:
         width: 707
         height: 1024
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -105,6 +117,72 @@ TextureImporter:
       bones: []
       spriteID: 433b5559d6f9c6b4caf8ee81f4c887df
       internalID: 8981215425757493056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u300A\u5929\u5929\u7231\u6D88\u9664\u300B\u5168\u5957\u7D20\u6750\u8D44\u6E90+\u97F3\u6548-bg
+        \u51FA\u6E38\u620F(game_o_\u7231\u7ED9\u7F51_aigei_com_1"
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 765
+        width: 125
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 68, z: 0, w: 39}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76460f0d08e81064f86ab0531830a267
+      internalID: 4553651871111023102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u300A\u5929\u5929\u7231\u6D88\u9664\u300B\u5168\u5957\u7D20\u6750\u8D44\u6E90+\u97F3\u6548-bg
+        \u51FA\u6E38\u620F(game_o_\u7231\u7ED9\u7F51_aigei_com_2"
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 661
+        width: 125
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 42}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5962fee0e60994ebda2bf823193bb3
+      internalID: -7826175224174307708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u300A\u5929\u5929\u7231\u6D88\u9664\u300B\u5168\u5957\u7D20\u6750\u8D44\u6E90+\u97F3\u6548-bg
+        \u51FA\u6E38\u620F(game_o_\u7231\u7ED9\u7F51_aigei_com_3"
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 32
+        width: 209
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb08c9b7998ad744ae517fd6b5049ff
+      internalID: -7867363482143464911
       vertices: []
       indices: 
       edges: []
