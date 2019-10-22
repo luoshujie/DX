@@ -273,7 +273,7 @@ public class GameMgr : MonoBehaviour
                 int newXpos = chess.data.XPos + i;
                 if (newXpos >= 0 && newXpos < Xcount)
                 {
-                    if (chessList[newXpos, chess.data.YPos].data.ChessColorTypeEnum == chess.data.ChessColorTypeEnum)
+                    if (chessList[newXpos, chess.data.YPos].data.ChessColorTypeEnum == chess.data.ChessColorTypeEnum&&chessList[newXpos,chess.data.YPos].data.ChessTypeEnum==ChessTypeEnum.None)
                     {
                         seekList.Add(chessList[newXpos, chess.data.YPos]);
                     }
@@ -288,7 +288,7 @@ public class GameMgr : MonoBehaviour
                 int newYpos = chess.data.YPos + j;
                 if (newYpos >= 0 && newYpos < Ycount)
                 {
-                    if (chessList[chess.data.XPos, newYpos].data.ChessColorTypeEnum == chess.data.ChessColorTypeEnum)
+                    if (chessList[chess.data.XPos, newYpos].data.ChessColorTypeEnum == chess.data.ChessColorTypeEnum&&chessList[chess.data.XPos,newYpos].data.ChessTypeEnum==ChessTypeEnum.None)
                     {
                         seekList.Add(chessList[chess.data.XPos, newYpos]);
                     }
